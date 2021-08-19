@@ -1,5 +1,5 @@
 import mongoose, { MongooseOptions } from 'mongoose'
-
+import config from './config'
 (async () => {
 	try{
 		const mongooseOptions: MongooseOptions = {
@@ -8,7 +8,7 @@ import mongoose, { MongooseOptions } from 'mongoose'
 
 			//user: config.MONGO_USER, 
 		}
-		const db = await mongoose.connect(`mongodb+srv://yawarpwn:Db4524987@cluster0.ms9fs.mongodb.net/tellDatabase?retryWrites=true&w=majority`, mongooseOptions)
+		const db = await mongoose.connect(config.DB, mongooseOptions)
 		console.log('database is connect to:', db.connection.name)
 	}	catch(err) {
 		console.error(err)
