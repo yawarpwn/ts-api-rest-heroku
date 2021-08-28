@@ -17,6 +17,7 @@ const productSchema = new Schema({
 	pedidoMinimo: Number,
 	sku: String,
 	rating: Number,
+	marca: String,
 	img: {
 		img1: { type: String, require: true },
 		img2: String,

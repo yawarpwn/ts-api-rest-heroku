@@ -1,6 +1,6 @@
 import {Router} from 'express'
 const router = Router()
-
+import { createForm } from './createForm'
 import {
 	getProducts, 
 	createProduct, 
@@ -16,6 +16,7 @@ import * as corporativosCtr from './corporativosControllers'
 import * as eppsCtr from './eppsControllers'
 
 router.get('/', getHome)
+router.post('/api/form', createForm)
 
 router.get('/proteccion-vial', getProducts)
 router.get('/cintas', cintasCtr.getCintas)
